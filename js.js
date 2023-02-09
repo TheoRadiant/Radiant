@@ -73,4 +73,44 @@ function scrollFunction1() {
   );
   
 }
+const observer = new IntersectionObserver ((entries)=> {
+  entries.forEach((entry) =>{
+    console.log(entry)
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }else{
+      entry.target.classList.remove('show');
+    }
+  })
+});
+const observers = new IntersectionObserver ((entries)=> {
+  entries.forEach((entry) =>{
+    console.log(entry)
+    if(entry.isIntersecting){
+      entry.target.classList.add('shows');
+    }else{
+      entry.target.classList.remove('shows');
+    }
+  })
+});
+const observerss = new IntersectionObserver ((entries)=> {
+  entries.forEach((entry) =>{
+    console.log(entry)
+    if(entry.isIntersecting){
+      entry.target.classList.add('showss');
+    }else{
+      entry.target.classList.remove('showss');
+    }
+  })
+});
+
+const hiddencard = document.querySelectorAll('.scrollhidden');
+hiddencard.forEach((el) => observer.observe(el));
+
+const hiddenjoin = document.querySelectorAll('.joiner');
+hiddenjoin.forEach((el) => observers.observe(el));
+
+const hiddenjoins = document.querySelectorAll('.oursrvc');
+hiddenjoins.forEach((el) => observerss.observe(el));
+
 

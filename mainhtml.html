@@ -21,41 +21,51 @@
     <li class="navitem">Our Philosophy</li>
   </ul>
 </div>
-<div class="container">
+<div class="container ">
   <p>WE ARE <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
 </div>
-<div class="whatwedo">
-  <h1 > JOIN THE DIGITAL ERA </h1>
+<div class="whatwedo" >
+  <h1 class="joiner" > JOIN THE DIGITAL ERA </h1>
   <div class="wwdwrap">
-    <h1 > Our Services</h1>
-    <div class="content">
+    <h1  class="oursrvc"> Our Services</h1>
+    <div class="content scrollhidden">
       <div class="cards">
-        <div class="card">
+        <div class="card" id="digitalmarketing">
           <div class="box">
-            <i class="fa-regular fa-clipboard" ></i>
+            
             <h3>Digital Marketing</h3>
-            <p>The Best on the Market.Customer-Driven Marketing ,proven to boost your ROI and increase your sales considerably.No gimmicks.No vanity metrics
+            <p>The Best on the Market.<br>Customer-Driven Marketing ,proven to boost your ROI and increase your sales considerably.<br>No gimmicks.<br>No vanity metrics
             </p>
           </div>
         </div>
-        <div class="card">
-          <div class="box">
-            <i class="fa-solid fa-code"></i>
+        <div class="card" id="webdesign">
+          <div class="box" >
+           
             <h3>Web Design</h3>
-            <p>Ready to join the Digital Era?Radiant provides you with State Of the Art Websites that make sure your name is out there.Customizable experiences at a fraction of the price. </p>
+            <p>Ready to join the Digital Era?Radiant provides you with State Of the Art Websites that make sure your name is out there. Customizable experiences at a fraction of the price. </p>
           </div>
         </div>
-        <div class="card">
+        <div class="card"  id="brandgrowth">
           <div class="box">
-            <i class="fa-solid fa-chart-simple"></i>
-            <h3>SEO Services</h3>
-            <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat quis tellu</p>
+            
+            <h3>Brand Growth</h3>
+            <p>Your company deserves more.We make company growth possible no matter the size of the enterprise</p>
             
           </div>
         </div>
       </div>
+      <button class="contactbtn">Let's Talk</button>
     </div>
   </div>
+  
 </div>
-<script src="js.js"></script>
+<script type="text/javascript" src="/vanilla-tilt.js"></script>
+<script> VanillaTilt.init(document.querySelectorAll(".card"),{
+  max: 25,
+  speed: 400,
+  glare:true,
+  "max-glare": 1,
+});
+</script>
+<script  defer src="js.js"></script>
 </body>
