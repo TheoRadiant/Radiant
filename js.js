@@ -17,7 +17,7 @@ const cursorSpan = document.querySelector(".cursor");
 const textArray = ["RADIANT", "CREATIVE", "INSPIRED BY YOU", "YOUR BEST CHOICE"];
 const typingDelay = 100;
 const erasingDelay = 100;
-const newTextDelay = 2000; // Delay between current and next text
+const newTextDelay = 2000; 
 let textArrayIndex = 0;
 let charIndex = 0;
 
@@ -49,23 +49,28 @@ function erase() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+document.addEventListener("DOMContentLoaded", function() { 
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
-const menuvisible = document.querySelector('.menuwrapper')
-const navitem = document.querySelector('.navitem')
 
-navitem.addEventListener('click', function(){
-  menuvisible.classList.toggle("visible")
-  menuBtn.classList.remove('open');
-})
+
 
 menuBtn.addEventListener('click', function(){
   menuvisible.classList.toggle("visible")
 })
 function scrollFunction1() {
-  let e = document.querySelector(".card");
+  let e = document.querySelector(".joiner");
   e.scrollIntoView({
+    block: 'start',
+    behavior: 'smooth',
+    inline: 'start'
+  }
+  );
+  
+}
+function scrollFunction2() {
+  let f = document.querySelector(".team");
+  f.scrollIntoView({
     block: 'start',
     behavior: 'smooth',
     inline: 'start'
@@ -114,3 +119,56 @@ const hiddenjoins = document.querySelectorAll('.oursrvc');
 hiddenjoins.forEach((el) => observerss.observe(el));
 
 
+var body = document.getElementsByTagName('body')[0];
+    body.style.backgroundColor = 'black';
+
+
+    
+    window.onscroll = function (event) {
+        var scroll = window.pageYOffset;
+        if (scroll < 300) {
+           
+           
+            body.style.backgroundColor = 'black';
+         } else if (scroll >= 500 && scroll < 1900) {
+            
+            body.style.backgroundColor = 'white';
+        } 
+        else if (scroll >= 1900 && scroll < 3000) {
+           
+            body.style.backgroundColor = 'black';
+        }
+        else if (scroll >= 3360 && scroll < 4440) {
+           
+           body.style.backgroundColor = 'yellow';
+       }
+      }
+
+     
+   
+   
+   
+   const buttonshow = document.querySelector('.learnmoreteam')
+   const overlayR = document.querySelector('.rightoverlay')
+   const overlayL = document.querySelector('.leftoverlay')
+   const closeR = document.querySelector('.closeright')
+   const closeL = document.querySelector('.closeleft')
+
+   buttonshow.addEventListener('click' , function(){
+    overlayR.classList.add('showover')
+    overlayL.classList.add('showoverl')
+   })
+   closeL.addEventListener('click', function(){
+    overlayL.classList.remove('showoverl')
+   })
+
+   closeR.addEventListener('click', function(){
+    overlayR.classList.remove('showover')
+   })
+
+   const navi=document.querySelector('.navbar')
+   const menuvisible = document.querySelector('.menuwrapper')
+   navi.addEventListener('click',function(){
+    menuvisible.classList.remove("visible")
+    menuBtn.classList.remove('open');
+   })
