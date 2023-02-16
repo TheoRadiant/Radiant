@@ -138,7 +138,7 @@ var body = document.getElementsByTagName('body')[0];
            
             body.style.backgroundColor = 'black';
         }
-        else if (scroll >= 3360 && scroll < 4440) {
+        else if (scroll >= 4060 && scroll < 4440) {
            
            body.style.backgroundColor = 'yellow';
        }
@@ -148,23 +148,6 @@ var body = document.getElementsByTagName('body')[0];
    
    
    
-   const buttonshow = document.querySelector('.learnmoreteam')
-   const overlayR = document.querySelector('.rightoverlay')
-   const overlayL = document.querySelector('.leftoverlay')
-   const closeR = document.querySelector('.closeright')
-   const closeL = document.querySelector('.closeleft')
-
-   buttonshow.addEventListener('click' , function(){
-    overlayR.classList.add('showover')
-    overlayL.classList.add('showoverl')
-   })
-   closeL.addEventListener('click', function(){
-    overlayL.classList.remove('showoverl')
-   })
-
-   closeR.addEventListener('click', function(){
-    overlayR.classList.remove('showover')
-   })
 
    const navi=document.querySelector('.navbar')
    const menuvisible = document.querySelector('.menuwrapper')

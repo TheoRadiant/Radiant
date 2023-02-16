@@ -475,194 +475,101 @@
 .team{
   overflow: hidden;
   position: absolute;
-  bottom: -220vh;
+  bottom: -250vh;
   width:100%;
   height: 100vh;
   background-color: transparent;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 0;
+
 }
-.teamwrapper{
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
+.teamcontainer{
+  margin: 20px 40px;
 }
-.teamwrapper h1{
-  font-size: 20vh;
+
+.headx{
+  font-size:  10rem; 
+  -webkit-text-stroke: #ffffff 3px;
   color: #000000;
-  -webkit-text-stroke: #ffffff 5px;
 }
-.teamdiv{
-  position: absolute;
-  top: 270px;
-  width: 100vw;
-  height: 50vh;
+
+.profiles{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 500px;
+}
+
+.profile{
+  flex-basis: 460px;
+ font-family: 'Courier New', Courier, monospace;
+border-radius: 20px;
+ text-align: center;
+ margin-top: 100px;
+ transition: 400ms all ease-in-out;
+ cursor: pointer;
+}
+
+.profile .profile-img{
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  cursor: pointer;
+  border: #fff solid 5px;
+  transition: 400ms;
+  margin-top: 20px;
   background-color: #fc1111;
 }
-.left{
-  justify-content: left;
-  align-items:flex-end;
-  display: flex;
-  width: 50%;
-  float: left;
-  height: 100%;
-  background-color: #ffffff;
-}
-.right{
-  display: flex;
-  flex-direction: row;
- column-width:  25vw;
-  width: 50%;
-  float: right;
-  height: 50vh;
-  background-color: #ffffff;
-}
-.team h2 {
-  color: #000000;
-  font-size: 80px;
-}
-.team p{
-  color: #000000;
-  font-size: 36px;
+
+.profile:hover .profile-img{
+  filter: grayscale(0%);
+  border: #000000 solid 5px;
 }
 
-.learnmoreteam{
- position: absolute;
- left: 45%;
- top: 85%;
-  
-  
-  width: 200px;
-  height: 50px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  border-radius: 5px;
-  font-size: 1vw;
-  transition: all 500ms ease-in-out;
+.username{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 34px;
+  letter-spacing: 2px;
+}
+.profile h5{
+  font-size: 28px;
+  letter-spacing: 4px;
 }
 
-.learnmoreteam:hover{
+.profile:hover{
   background-color: #fff;
   color: #000000;
-  filter: blur(1px);
-}
-.rightoverlay{
-  text-align: center;
- position: absolute;
-left: 50%;
-width: 50%;
- opacity: 0;
- height:50vh;
- background-color: rgb(0, 0, 0);
- transition: all 0.5s ease-in;
-
- transform: translateX(100%);
 }
 
-.rightoverlay.showover{
- transform: translateX(0);
-  opacity: 1;
+.profile p{
+  font-size: 20px;
+  text-align: left;
+  margin:10px 20px 10px 20px;
 }
-.leftoverlay{
-  text-align: center;
-  position: absolute;
- left: -50%;
- width: 50%;
-  transform: translateX(100%);
-  opacity: 0;
-  height:50vh;
-  background-color: rgb(0, 0, 0);
-  transition: all 0.5s ease-in-out;
-  transform: translateX(-50%);
- 
- }
-.leftoverlay.showoverl{
- transform: translateX(100%);
- opacity: 1;
- z-index: 12;
-}
-#aimi{
- 
-justify-self: center;
-  width: 20vw;
-  margin-left: 30%;
-  height: 30vh;
-align-self: flex-end;
-}
-
-#Theo{
- justify-self: center;
-  width: 20vw;
-  margin-left: 30%;
-  height: 30vh;
-align-self: flex-end;
-}
-.rightoverlay h1{
- 
-  font-size: 10vh;
-  margin-bottom: 5vh;
-}
-.leftoverlay h1{
-  font-size: 10vh;
-  margin-bottom: 5vh;
- 
-}
-.rightoverlay p{
-  
-  font-size: 2.5vh;
-  color: #fff;
-}
-.leftoverlay p{
- 
-  font-size: 2.5vh;
-  color: #fff;
-}
-.closeright{
-  position: relative;
-  top: 20%;
-
-  
-  
-  width: 200px;
-  height: 50px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  border-radius: 5px;
-  font-size: 1vw;
-  transition: all 500ms ease-in-out;
-}
-.closeleft{
-  position: relative;
-  top: 10%;
-
-  
-  
-  width: 200px;
-  height: 50px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  border-radius: 5px;
-  font-size: 1vw;
-  transition: all 500ms ease-in-out;
-}
-.closeleft:hover{
-  background-color: #fff;
-  color: #000000;
-  filter: blur(1px);
-}
-.closeright:hover{
-  background-color: #fff;
-  color: #000000;
-  filter: blur(1px);
+@media only screen and (max-width: 768px){
+  .team{
+    overflow:visible;
+    position: absolute;
+    bottom: -320vh;
+    width:100%;
+    height: 100vh;
+    background-color: transparent;
+  }
+  .headx{
+    font-size: 50px;
+  }
+  .profiles{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .profile{
+    background-color: #fff;
+    color: #000000;
+  }
+  .profile .profile-img{
+    filter: grayscale(0%);
+    border: #000000 solid 5px;
+  }
+      
 }
