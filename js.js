@@ -78,6 +78,16 @@ function scrollFunction2() {
   );
   
 }
+function scrollFunction3() {
+  let d = document.querySelector(".philosophy");
+  d.scrollIntoView({
+    block: 'start',
+    behavior: 'smooth',
+    inline: 'start'
+  }
+  );
+  
+}
 const observer = new IntersectionObserver ((entries)=> {
   entries.forEach((entry) =>{
     console.log(entry)
@@ -138,10 +148,8 @@ var body = document.getElementsByTagName('body')[0];
            
             body.style.backgroundColor = 'black';
         }
-        else if (scroll >= 4060 && scroll < 4440) {
-           
-           body.style.backgroundColor = 'yellow';
-       }
+       
+      
       }
 
      
@@ -155,3 +163,74 @@ var body = document.getElementsByTagName('body')[0];
     menuvisible.classList.remove("visible")
     menuBtn.classList.remove('open');
    })
+
+
+const observerp = new IntersectionObserver(entries => {
+ 
+  entries.forEach(entry => {
+    
+    if (entry.isIntersecting) {
+    
+      entry.target.classList.add('shown');
+    } else {
+      
+      entry.target.classList.remove('shown');
+    }
+  });
+});
+
+
+const philosophyElements = document.querySelectorAll('.philosophy');
+
+philosophyElements.forEach(element => {
+  observerp.observe(element);
+});
+
+
+
+
+
+const observerdiv1 = new IntersectionObserver(entries => {
+ 
+  entries.forEach(entry => {
+    
+    if (entry.isIntersecting) {
+    
+      entry.target.classList.add('shownd');
+    } else {
+      
+      entry.target.classList.remove('shownd');
+    }
+  });
+});
+
+
+const philosophydiv1 = document.querySelectorAll('.philosophydiv1');
+
+philosophydiv1.forEach(element => {
+  observerp.observe(element);
+});
+
+
+// create an intersection observer instance
+const observerd = new IntersectionObserver(entries => {
+  // loop through the intersection observer entries
+  entries.forEach(entry => {
+    // check if the element is intersecting the viewport
+    if (entry.isIntersecting) {
+      // add the "shownf" class to the element
+      entry.target.classList.add('shownf');
+    } else {
+      // remove the "shownf" class from the element
+      entry.target.classList.remove('shownf');
+    }
+  });
+});
+
+// select the elements to observe
+const philosophyDiv2Elements = document.querySelectorAll('.philosophydiv2');
+
+// observe the selected elements
+philosophyDiv2Elements.forEach(element => {
+  observerd.observe(element);
+});
