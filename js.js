@@ -212,25 +212,25 @@ philosophydiv1.forEach(element => {
 });
 
 
-// create an intersection observer instance
+
 const observerd = new IntersectionObserver(entries => {
-  // loop through the intersection observer entries
+  
   entries.forEach(entry => {
-    // check if the element is intersecting the viewport
+   
     if (entry.isIntersecting) {
-      // add the "shownf" class to the element
+     
       entry.target.classList.add('shownf');
     } else {
-      // remove the "shownf" class from the element
+      
       entry.target.classList.remove('shownf');
     }
   });
 });
 
-// select the elements to observe
+
 const philosophyDiv2Elements = document.querySelectorAll('.philosophydiv2');
 
-// observe the selected elements
+
 philosophyDiv2Elements.forEach(element => {
   observerd.observe(element);
 });

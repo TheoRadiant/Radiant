@@ -4,7 +4,7 @@
     box-sizing: border-box;
   }
   body {
-    transition: all 500ms ease-in-out;
+    transition: all 1000ms ease-in-out;
     
     display: flex;
     justify-content: center;
@@ -584,7 +584,7 @@ border-radius: 20px;
   height: 170vh;
   background-color: #000000;
  
- transition: all 0.5s ease-in-out;
+ transition: all 1s ease-in-out;
   
 }
 .shown{
@@ -691,6 +691,7 @@ margin-left: 50px;
 }
 .philosophydiv1{
   flex-direction: column;
+  flex-wrap: wrap;
  justify-content: flex-start;
   width: 100%;
   height: 50%;
@@ -701,7 +702,8 @@ margin-left: 50px;
 
 }
 .philosophydiv2{
- display: grid;
+ display: flex;
+ flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
    width: 100%;
@@ -763,3 +765,196 @@ margin-right: 0%;
 align-self: flex-end;
 }
  }
+
+ .contactus{
+  
+  overflow: hidden;
+  position: absolute;
+  bottom: -550vh;
+  width:100%;
+  height: 100%;
+  
+  background-color: #000000;
+ 
+ transition: all 1s ease-in-out;
+ }
+ .wrappercontact{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+ }
+
+ .contact1{
+ align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  gap: 90px;
+ }
+
+ #lets{
+  font-size: 10rem;
+  color: #000000;
+  -webkit-text-stroke: 2px #fff;
+ }
+.elementwrapper{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+  
+}
+.element{
+  align-self:center;
+  width: 40rem;
+  height: 8rem;
+  background-color: transparent;
+  border-radius: 25px;
+  border: #000000 2px solid;
+  display: flex;
+  flex-direction:row;
+  gap: 0rem;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+ 
+}
+.element:hover{
+  background-color: #fff;
+  color: #000000;
+}
+.element:hover  a{
+  color: #000000;
+  transition: all 0.5s ease-in-out;
+}
+.element a{
+ text-decoration: none;
+ color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 3rem;
+  font-weight: bold;
+  
+}
+.element i{
+  color: #ffffff;
+  font-size: 3rem;
+
+
+}
+.iconwrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+height: 100px;
+background-color: #ff0000;
+border: #000000 solid 2px;
+border-radius: 50%;
+margin-left: 50px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #000000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+  margin-left: 30%;
+  width: 300px;
+}
+
+input[type=submit]:hover {
+  background-color: #6e6c6c;
+  color: #000000;
+  filter: blur(1px);
+ 
+}
+
+.container2 {
+   
+  border-radius: 15px;
+  background-color: #ffffff;
+  padding: 20px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  width: 80%;
+ margin-top: 25%;
+}
+form {
+  display: flex;
+   flex-direction: column;
+}
+@media only screen and (max-width: 768px) {
+  .contactus{
+    bottom: -750vh;
+    overflow: scroll;
+    height: fit-content;
+  }  .wrappercontact{
+    flex-direction: column;
+   
+  }
+  #lets{
+    font-size: 5rem;
+  }
+  .elementwrapper{
+    width: 100%;
+    height: 50%;
+  }
+  .element{
+    width: 80%;
+    height: 3.5rem;
+    background-color: #fff;
+    color: #000000;
+    gap: 1rem;
+  }
+  .element a{
+    font-size: 1rem;
+    text-decoration: none;
+    padding-top: 18px;
+    padding-left: 0px;
+    color: #000000;
+  }
+  .element i{
+    font-size: 1.5rem;
+  }
+  .iconwrap{
+    width: 3rem;
+    height: 3rem;
+    margin-left: 10px;
+    
+  }
+  input[type=submit] {
+    background-color: #000000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+    margin-left: 30%;
+    width: 100px;
+  }
+}
