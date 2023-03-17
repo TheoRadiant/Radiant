@@ -4,8 +4,7 @@
     box-sizing: border-box;
   }
   body {
-    transition: all 1000ms ease-in-out;
-    
+transition: all 0.5s ease-in-out;
     display: flex;
     justify-content: center;
    
@@ -80,6 +79,7 @@
   header img{
     width: 10vh;
     height: 10vh;
+    z-index: 3;
   }
 
 
@@ -89,8 +89,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 .container p {
+  z-index: 1;
   font-size: 3rem;
   padding: 0.5rem;
   font-weight: bold;
@@ -130,11 +132,13 @@
   color: #fff;
   opacity: 0;
   transition: all .5s ease-in-out;
+  z-index: -1;
 }
 
 .menuwrapper.visible{
   opacity: 1;
   display: flex;
+  z-index: 5;
 }
 .navbar{
   position: relative;
@@ -203,7 +207,7 @@
   .joiner{
     position: relative;
     top: 20px;
-  
+   cursor: pointer;
     -webkit-text-stroke: rgb(0, 0, 0) 0px;
     color: none;
     font-size: 15vh;
@@ -214,6 +218,7 @@
     z-index: 0;
     opacity: 0;
     transition:  all 0.5s ease-in-out;
+   
   }
   .joiner.shows{
     
@@ -269,7 +274,7 @@
   .card{
     width:400px;
     height: 50vh;
-    background: #474747;
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(30px);
    box-shadow: 30px 30px 10px rgba(0, 0, 0,0.5);
@@ -451,13 +456,13 @@
   .content button{
     position: relative;
     left: 45%;
-    top: 4vh;
+    top: 10vh;
     width:10vw;
     height: 6vh;
     background-color: transparent;
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
     font-size: 26px;
-    color: #000000;
+    color: #ffffff;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
     border-radius: 10px;
@@ -539,10 +544,6 @@ border-radius: 20px;
   letter-spacing: 4px;
 }
 
-.profile:hover{
-  background-color: #fff;
-  color: #000000;
-}
 
 .profile p{
   font-size: 20px;
@@ -579,105 +580,286 @@ border-radius: 20px;
 .philosophy{
   overflow: hidden;
   position: absolute;
-  bottom: -450vh;
+  bottom: -400vh;
   width:100%;
-  height: 170vh;
-  background-color: #000000;
- 
+  height: 130vh;
+  background-color:transparent;
+
  transition: all 1s ease-in-out;
-  
-}
-.shown{
-  background-color: #fff;
   
 }
 .philosophy h1{
-  font-size:  8rem; 
-  -webkit-text-stroke: #000000 3px;
-  color: #ffffff;
-  margin-bottom: 40px;
+  font-size: 15vh;
+  padding-bottom: 150px;
   text-align: center;
+  
 }
-.philosophydiv1{
+.philosophycontent{
   display: flex;
-  width: 100%;
-  height: 40%;
-  background-color: transparent;
-  justify-content: space-evenly;
-  gap:100px;
   align-items: center;
- flex-direction: row;
- transform: translateX(-100%);
- transition: all 1s ease-in-out;
+  justify-content: space-around;
 }
 
-.philosophydiv1.shown{
-  transform: translateX(0%);
-}
- .imgwrap{
-  width: 40%;
-  height: 70%;
-border-radius: 25px;
-margin-left: 50px;
-
- }
-  .imgwrap img{
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  transition: all 0.3s ease-in-out;
+.screen {
+  width: 450px;
+  display: flex;
+  border: 3px solid rgb(var(--primary-rgb) / 80%);
+  aspect-ratio: 10 / 16;
+  border-radius: 1rem;
+  background-color: rgb(var(--primary-rgb) / 15%);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
-  border: solid 2px #000000;
-  margin-left: 0px;
- }
- .imgwrap:hover img{
-  transform: scaleX(1.1);
-  box-shadow: 33px 33px 11px rgba(0, 0, 0,0.5);
- }
- .textwrap{
-  width: 50%;
- }
-.textwrap h1{
-  font-family: 'Courier New', Courier, monospace;
-  text-align: left;
-  font-size: 4rem;
-  color: #ffffff;
- 
 }
-.textwrap p{
-  margin-right: 50px;
-  font-size: 1rem;
-  color: #000000;
-  font-size: 24px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+.screen:hover{
+  transform: scale(1.1);
+  box-shadow: 8px 9px 18px rgb(180, 70, 70);
+}
+#values:hover{
+  transform: scale(1.1);
+  box-shadow: -8px 9px 18px rgb(64, 230, 221);
 }
 
-.philosophydiv2{
-  display: flex;
+.screen:after,
+.screen:before {
+  content: "";
+  height: 5px;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  translate: -50% 0%;
+  background-color: white;
+}
+
+.screen:before {
+  width: 15%;
+  top: 0rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.screen:after {
+  width: 25%;
+  bottom: 0rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+@keyframes pan-overlay {
+  from {
+    background-position: 0% 0%;
+  }
+  
+  to {
+    background-position: 0% -100%;
+  }
+}
+
+.screen-overlay {    
+  background: linear-gradient(
+    rgb(var(--primary-rgb) / 0.15),
+    rgb(var(--primary-rgb) / 0.15) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
   width: 100%;
-  height: 40%;
-  background-color: transparent;
-  justify-content: space-evenly;
-  gap:100px;
-  align-items: center;
- flex-direction: row;
- transform: translateX(100%);
- transition: all 1s ease-in-out;
-}
-.philosophydiv2.shownf{
-  transform: translateX(0%);
- 
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0px;
 }
 
-.philosophydiv2 .imgwrap{
-  order: 2;
-  margin-right: 50px;
-  margin-left: 0px;
+@keyframes pan-image {  
+  0% {
+    background-position: 36% 42%;
+    background-size: 200%;
+  }
+  
+  20% {
+    background-position: 30% 35%;
+    background-size: 200%;
+  }
+  
+  20.0001% { /* -- View 2 -- */
+    background-position: 60% 85%;
+    background-size: 500%;
+  }
+  
+  40% {
+    background-position: 49% 81%;
+    background-size: 500%;
+  }
+  
+  40.0001% { /* -- View 3 -- */
+    background-position: 80% 42%;
+    background-size: 300%;
+  }
+  
+  60% {
+    background-position: 84% 33%;
+    background-size: 300%;
+  }
+  
+  60.0001% { /* -- View 4 -- */
+    background-position: 0% 0%;
+    background-size: 300%;
+  }
+  
+  80% {
+    background-position: 15% 4%;
+    background-size: 300%;
+  }
+  
+  80.0001% { /* -- View 5 -- */
+    background-position: 80% 10%;
+    background-size: 300%;
+  }
+  
+  100% {
+    background-position: 72% 14%;
+    background-size: 300%;
+  }
 }
-.philosophydiv2  .imgwrap:hover img{
-  transform: scaleX(1.1);
-  box-shadow: -33px -33px 11px rgba(0, 0, 0,0.5);
- }
+
+.screen > .screen-image {
+  background-image: url("/pexels-matheus-bertelli-4558461.jpg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 300%;
+  background-position: 0% 0%;
+  filter:  hue-rotate(20deg);
+  opacity: 0.6;
+  animation: pan-image 15s linear infinite;
+}
+
+.screen > #image2 {
+  background-image: url("/pexels-photo-69432.webp");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 300%;
+  background-position: 0% 0%;
+  filter:  hue-rotate(-20deg);
+  opacity: 0.6;
+  animation: pan-image 15s linear infinite;
+}
+
+
+.screen > .screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  gap: 4rem;
+  position: relative;
+  z-index: 3;
+  margin: 1rem;
+  padding-bottom: 6rem;
+  border: 1px solid rgb(var(--primary-rgb) / 50%);
+  border-radius: 0.6rem;
+}
+
+.screen i{
+  color: white;
+  font-size: 4rem;
+  text-shadow: 0px 0px 0.5rem white;
+}
+
+.screen > .screen-content > .screen-user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.screen > .screen-content > .screen-user:before,
+.screen > .screen-content > .screen-user:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  background-color: rgb(var(--primary-rgb));
+  border-radius: 1rem;
+  box-shadow: 0px 0px 8px 3px rgb(var(--primary-rgb) / 60%);
+}
+
+.screen > .screen-content > .screen-user:before {
+  height: 2px;
+  width: 50px;
+  translate: -20px -1rem;
+  opacity: 0.75;
+}
+
+.screen > .screen-content > .screen-user:after {
+  height: 3px;
+  width: 30px;
+  translate: 26px calc(-1rem - 0.5px);
+}
+
+.screen > .screen-content > .screen-user > :is(.name, .link) {
+  font-family: "Source Code Pro", monospace;
+  color: white; 
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+.screen > .screen-content > .screen-user > .name {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.screen > .screen-content > .screen-user > .name:before,
+.screen > .screen-content > .screen-user > .name:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+.screen > .screen-content > .screen-user > .name:before {
+  top: 55%;
+  right: -1.5rem;
+}
+
+.screen > .screen-content > .screen-user > .name:after {
+  top: 45%;
+  left: -1.5rem;  
+}
+
+.screen > .screen-content > .screen-user > .link {  
+  opacity: 0.8;
+  font-size: 1rem;
+ 
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-decoration: none;
+}
+
+
+
+@media(max-width: 700px) {
+  .screen {
+    scale: 0.6;
+    margin-bottom: 0rem;
+  }
+}
+
 
  @media only screen and (max-width: 768px){
 .philosophy{
@@ -689,81 +871,7 @@ margin-left: 50px;
  
   
 }
-.philosophydiv1{
-  flex-direction: column;
-  flex-wrap: wrap;
- justify-content: flex-start;
-  width: 100%;
-  height: 50%;
-  background-color: transparent;
-  margin-top: 0vh;
- gap: 0px;
- 
 
-}
-.philosophydiv2{
- display: flex;
- flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-   width: 100%;
-   height: 50%;
-   background-color: transparent;
-   margin-top: 0vh;
-  gap: 0px;
-}
-.philosophy h1{
-  font-size:  3rem; 
-  
- margin: 0%;
- 
-}
-.imgwrap{
-  width: 80%;
-  height: 20vh;
-border-radius: 25px;
-margin-top: 10%;
-margin-left: 0%;
-margin-right: 0%;
-justify-self: center;
-
- }
- .imgwrap img{
-  width: 100%;
-  height: 100%;
- }
- .textwrap{
-  width: 100%;
-  margin-top: 3vh;
-  margin-right: 0%;
- text-align: center;
- }
- .textwrap h1{
-  font-size: 2.5rem;
-  text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
- }
- .textwrap p{
-  margin-left: 50px;
-  font-size: 1rem;
-  text-align: center;
- }
- .philosophydiv2 .imgwrap{
-  display: flex;
-  width: 90%;
-  height: 20vh;
-border-radius: 25px;
-margin-top: 10%;
-margin-left: 0%;
-margin-right: 0%;
-
-
-}
-
-.philosophydiv2.textwrap{
-align-self: flex-end;
-}
  }
 
  .contactus{
@@ -774,7 +882,7 @@ align-self: flex-end;
   width:100%;
   height: 100%;
   
-  background-color: #000000;
+  background-color: transparent;
  
  transition: all 1s ease-in-out;
  }
@@ -822,14 +930,8 @@ align-self: flex-end;
   transition: all 0.5s ease-in-out;
  
 }
-.element:hover{
-  background-color: #fff;
-  color: #000000;
-}
-.element:hover  a{
-  color: #000000;
-  transition: all 0.5s ease-in-out;
-}
+
+
 .element a{
  text-decoration: none;
  color: #fff;
@@ -843,6 +945,7 @@ align-self: flex-end;
   padding-top: 50px;
   padding-left: 3rem;
   font-weight: bold;
+  font-family: 'Space Mono', monospace;
   
 }
 .element i{
@@ -896,7 +999,9 @@ input[type=submit]:hover {
 .container2 {
    
   border-radius: 15px;
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(30px);
   padding: 20px;
   color: #000000;
   font-family: 'Courier New', Courier, monospace;
@@ -958,3 +1063,48 @@ form {
     width: 100px;
   }
 }
+
+#success-message{
+  display: none;
+top:80%;
+left: 10%;
+position: fixed;
+width: 300px;
+height: 100px;
+background-color: #000000;
+border: #fff solid 2px;
+background-color: #000000;
+
+text-align: center;
+}
+
+.Philod{
+  cursor: pointer;
+}
+#blob {
+  height: 34vmax;
+  aspect-ratio: 1;
+ 
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  transition: background-color 300ms ease-in-out;
+  animation: rotate 20s infinite;
+  opacity: 0.8;
+  z-index: -1;
+  position: fixed;
+}
+
+
+
+#blur {
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  backdrop-filter: blur(12vmax);
+  position: fixed;
+}
+

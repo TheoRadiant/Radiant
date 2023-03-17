@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="csss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
   <header>
@@ -14,21 +14,28 @@
   <div class="menu-btn__burger"></div>
 </div>
 </header>
+<div id="blob"></div>
+<div id="blur"></div>
 <div class="menuwrapper">
   <ul class="navbar">
-    <li class="navitem" onclick="scrollFunction1()">What We Do</li>
-    <li class="navitem" id="whowear" onclick="scrollFunction2()">Who We Are</li>
-    <li class="navitem" onclick="scrollFunction3()">Our Philosophy</li>
+    <li class="navitem" data-section=".joiner">What We Do</li>
+    <li class="navitem" data-section=".team">Who We Are</li>
+    <li class="navitem" data-section=".philosophy">Our Philosophy</li>
   </ul>
 </div>
+
+
+
+
+
 <div class="container ">
   <p>WE ARE <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
 </div>
  
 <div class="whatwedo" >
 
-  <h1 class="joiner" > JOIN THE DIGITAL ERA</h1>
- 
+  <h1 class="joiner" data-value="JOIN THE DIGITAL ERA" > JOIN THE DIGITAL ERA</h1>
+  
   <div class="wwdwrap">
     <h1  class="oursrvc"> Our Services</h1>
     <div class="content scrollhidden">
@@ -72,7 +79,7 @@
 <div class="teamcontainer">
 
 
-  <h1 class="headx">Meet <span>Our Team</span></h1>
+  <h1 class="headx" data-value="Meet Our Team">Meet <span>Our Team</span></h1>
 <div class="profiles">
 
   <div class="profile">
@@ -100,57 +107,62 @@
  
 </section>
 <section class="philosophy">
-  <h1>Our philosophy</h1>
-<div class="philosophydiv1">
-  <div class="imgwrap">
-    <img src="customer.avif">
+<h1>Our Philosphy</h1>
+<div class="philosophycontent">
+
+  <div class="screen" id="values">  
+    <div class="screen-image"></div>  
+    <div class="screen-overlay"></div>  
+    <div class="screen-content"><i class="fa-solid fa-award"></i>
+      <div class="screen-user">
+        <span class="name" data-value="OUR VALUES DEFINE US">OUR VALUES DEFINE US</span>
+        <a class="link">We believe in creating beautiful, functional websites that reflect your brand's personality. We value collaboration, attention to detail, and customer satisfaction. </a>
+      </div>
     </div>
-    <div class="textwrap">
-    <h1> We Are Driven By You!</h1>
-    <p>Our philosophy is simple: customer comes first. We believe that the success of our clients is our success, and that's why we make it our top priority to understand their unique needs and goals. We work closely with each client to create customized marketing strategies that deliver results. Our team of experts is dedicated to providing the highest level of customer service, and we go above and beyond to ensure that our clients are satisfied with our work. We know that every client is different, and that's why we take a personalized approach to each project we undertake.</p>
+  </div>
+  <div class="screen">  
+    <div class="screen-image" id="image2"></div>  
+    <div class="screen-overlay"></div>  
+    <div class="screen-content">
+      <i class="screen-icon fa-brands fa-codepen"></i>
+      <div class="screen-user">
+        <span class="name" data-value="YOU COME FIRST">YOU COME FIRST</span>
+        <a class="link" >we place people at the center of everything we do. We take a user-focused approach to web design, prioritizing functionality and accessibility. Our goal is to create websites that not only look great, but also provide a seamless experience for your customers.</a>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<div class="philosophydiv2">
-  <div class="imgwrap">
-    <img src="/our valus.jpg">
-    </div>
-    <div class="textwrap">
-    <h1> Our Values Define Us</h1>
-   <p>At Radiant, we are guided by a set of core values that shape everything we do. We believe in delivering excellence in all of our work, and we strive to exceed our clients' expectations at every turn. Our team is made up of experts who are passionate about what they do, and we are committed to staying at the forefront of the latest trends and technologies in digital marketing. We also believe in honesty, transparency, and open communication, and we work closely with our clients to ensure that they are always in the loop and fully informed about the progress of their projects. Our goal is to build long-term relationships with our clients, and we achieve this by providing the highest level of customer service and support. </p>
 
 
-
-   </p>
-  </div>
-
-</div>
   
 </section>
 
 <section class="contactus">
-
+  <div id="success-message" >
+    <p>Your message has been sent!</p>
+  </div>
 <div class="wrappercontact">
 
   <div class="contact1" >
-   <h1 id="lets">Find Us</h1>
+   <h1 id="lets" data-value="Find Us">Find Us</h1>
 
    <div class="elementwrapper">
    <div class="element">
     <div class="iconwrap">
       <i class="fa-solid fa-location-dot"></i>
     </div>
-    <a>Patission 279-281</a>
+    <a class="hack" data-value="Patission 279-281">Patission 279-281</a>
    </div>
    <div class="element" > 
 
     <div class="iconwrap"><i class="fa-solid fa-phone"></i></div>
-    <a href="tel:6946934533">6946934533</a>
+    <a href="tel:6946934533" class="hack" data-value="6946934533">6946934533</a>
    </div>
    <div class="element">
     <div class="iconwrap"><i class="fa-regular fa-envelope"></i></div>
-    <a>contact@radiant.com</a>
+    <a class="hack" data-value="contact@radiant.com">contact@radiant.com</a>
    </div>
   </div>
   </div>
@@ -159,7 +171,8 @@
    <div class="contact1" id="former">
 
     
-
+   
+    
 <div class="container2">
   <form method="post" action="email.php" >
     <label for="firstname">First Name</label>
@@ -173,30 +186,23 @@
 
     <label for="country">Country</label>
     <select id="country" name="country">
-      <option value="cyprus">Cyprus</option>
-      <option value="uk">United Kingdom</option>
-      <option value="greece">Greece</option>
+      <option value="Cyprus">Cyprus</option>
+      <option value="UK">United Kingdom</option>
+      <option value="Greece">Greece</option>
     </select>
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="Message" placeholder="Write something.." style="height:200px"></textarea>
 
-    <input type="submit" value="Submit" >
+    <input type="submit" value="send" >
   </form>
 </div>
-     
 
 </div>
 
 </section>
 
-<script type="text/javascript" src="/vanilla-tilt.js"></script>
-<script> VanillaTilt.init(document.querySelectorAll(".card"),{
-  max: 25,
-  speed: 400,
-  glare:true,
-  "max-glare": 1,
-});
-</script>
+
 <script  defer src="js.js"></script>
 </body>
+
